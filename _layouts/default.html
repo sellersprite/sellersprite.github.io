@@ -55,9 +55,6 @@ $(function() {
   </script>
   <body>
     <div class="wrapper"> 
-      <nav>
-        <ul></ul>
-      </nav>
       <header {% unless site.description or site.github.project_tagline %} class="without-description" {% endunless %}>
         <h1>{{ site.title | default: site.github.repository_name }}</h1>
         {% if site.description or site.github.project_tagline %}
@@ -72,6 +69,9 @@ $(function() {
           <li><a href="{{ site.github.repository_url }}">View On <strong>GitHub</strong></a></li>
         </ul>
       </header>
+        <nav>
+        <ul></ul>
+      </nav>
       <section>
 
       {{ content }}

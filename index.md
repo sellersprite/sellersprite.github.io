@@ -998,7 +998,7 @@ curl 'https://api.sellersprite.com/v1/traffic/source \
 | 12    | last 1 year   |
 | 24    | last 2 years  |
 
-### Table 1.4 Product size
+#### Table 1.4 Product size
 
 * U.S. Market
 

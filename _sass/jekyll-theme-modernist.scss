@@ -344,11 +344,11 @@ footer {
   }
 }
 nav {
-  width: 230px;
+  width: 330px;
   position: fixed;
-  top: 220px;
+  top: 100px;
   left:50%;
-  margin-left:-580px;
+  margin-left:-650px;
   text-align: right;
 
   ul {
@@ -386,7 +386,7 @@ nav {
     }
 
     a {
-      color: #666;
+      color: #FFF;
 
       &:hover { color: #999; }
     }

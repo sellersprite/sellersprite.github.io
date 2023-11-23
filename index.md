@@ -224,8 +224,6 @@ curl 'https://api.sellersprite.com/v1/product/competitor-lookup' \
 --compressed
 ```
 
-### 
-
 ### Product node
 
 * Request URI：**GET** /v1/product/node
@@ -999,6 +997,53 @@ curl 'https://api.sellersprite.com/v1/traffic/source \
 curl 'https://api.sellersprite.com/v1/sales/prediction/bsr?
 bsr=2&categoryId=11260432011&marketplace=US' \
   -H 'secret-key: Your Key' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --compressed
+```
+### ASIN Sales Forecast
+
+* Request URI：**GET** /v1/sales/prediction/asin
+
+#### Request parameter
+
+| Name            | Type         | Description                       | Example       | Required |
+| ----------------- | -------------- | ---------------------------------- | ----------------- | -------------- |
+| marketplace | String   | marketplace,see table 1.2                 | US          | ✓       |
+| asin          | String  | asin                                    | B07Z82895W | ✓       |
+
+#### Response parameter
+
+| Name              | Type             | Description              | Example                                                                                |
+| ------------------- | ------------------ | -------------------------- | --------------------------------------------------------------------------------- |
+| asinDetail      | Object  | asin明细       |                                                                                                                                                                               |
+| --------------------- | ------------- | -------------------- | ------------------------------------------------------------------------------------- |
+| └asin          | String  | asin           | B00CFM8DI2                                                                                                                                                                |
+| └title         | String  | title           | Boot Bananas Original Shoe Deodorizer | Long-Lasting, Reusable Sports Shoe Deodorizer Odor Neutralizer & Air Purifier | Eco-Conscious | Lasts 6 to 12 Months | 1 Pair |
+| └brand         | String  | brand           | Boot Bananas                                                                                                                                                              |
+| └availableDate | Long    | Listing time       | 1397001600000                                                                                                                                                             |
+| └category      | String  | Category name      | Clothing, Shoes & Jewelry                                                                                                                                                 |
+| └categoryId    | String  | Category  Id| 7141123011                                                                                                                                                                |
+| └imageUrl      | String  | image url        | https://images-na.ssl-images-amazon.com/images/I/41AGxmiW-vL._AC_US600_.jpg                                                                                               |
+| └ratings       | Integer | Score evaluation         | 32004                                                                                                                                                                     |
+| └rating        | Float   | rating value        | 4.6                                                                                                                                                                       |
+| dailyItemList   | List    | Daily sales forecast details |                                                                                                                                                                               |
+| └date          | String  | date           | 2023-04-19                                                                                                                                                                |
+| └bsr           | Integer | bsr            | 48614                                                                                                                                                                     |
+| └sales         | Integer | sales           | 14                                                                                                                                                                        |
+| └amount        | Float   | sales volume          | 200                                                                                                                                                                       |
+| └price         | Float   | price           | 20                                                                                                                                                                        |
+| monthItemList   | List    | Monthly Sales Forecast Details |                                                                                                                                                                               |
+| └date          | String  | date           | 2023-04                                                                                                                                                                   |
+| └sales         | Integer | sales           | 14                                                                                                                                                                        |
+| └amount        | Float   | sales volume | 200                                                                                                                                                                       |
+| └price         | Float   | price           | 20                                                                                                                                                                        |
+
+#### Request example
+
+```
+curl 'https://api.sellersprite.com/v1/sales/prediction/asin?
+asin=B08C7HDF1F&marketplace=US' \
+  -H 'secret-key: You Key' \
   -H 'content-type: application/json;charset=UTF-8' \
   --compressed
 ```

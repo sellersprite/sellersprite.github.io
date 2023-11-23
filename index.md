@@ -911,7 +911,7 @@ curl 'https://api.sellersprite.com/v1/traffic/listing' \
 --compressed
 ```
 
-### Check The Source Of Traffic
+### Keyword Distribution
 
 * Request URI：**POST** /v1/traffic/source
 
@@ -964,7 +964,7 @@ curl 'https://api.sellersprite.com/v1/traffic/source \
 --compressed
 ```
 
-### BSR Sales Forecast
+### BSR Sales Estimator
 
 * Request URI：**GET** /v1/sales/prediction/bsr
 
@@ -1000,7 +1000,7 @@ bsr=2&categoryId=11260432011&marketplace=US' \
   -H 'content-type: application/json;charset=UTF-8' \
   --compressed
 ```
-### ASIN Sales Forecast
+### ASIN Sales Estimator
 
 * Request URI：**GET** /v1/sales/prediction/asin
 

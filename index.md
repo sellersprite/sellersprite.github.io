@@ -499,7 +499,68 @@ curl 'https://api.sellersprite.com/v1/traffic/keyword' \
 --data-raw $'{"marketplace":"US","asin":"B07Z82895W"}' \
 --compressed
 ```
-
+### ASIN Detail
+* Request URI：**GET** /v1/asin/{marketplace}/{asin}
+#### Request parameter
+| Name    | Type | Description                   | Example      | Required |
+| ----------------- | -------------- | -------------------------------- | ---------------- | -------------- |
+| marketplace | String   | marketplace code,see table 1.2                      | US   | ✓       |
+| asin     | String  | asin                       | B08GHW4TBS | ✓    |
+| month       | String  | Historical month, default to the last 30 days if not passed | 202308     |              |
+#### Response parameter
+| Name        | Type    | Description                      | Example    |
+| ------------------------- | -------------- | -------------------------- | --------------------------------- |
+| asin                | String   | asin                 | B08GHW4TBS     |
+| asinUrl             | String   | asin url             | [https://www.amazon.com/dp/B08GHW4TBS](https://www.amazon.com/dp/B08GHW4TBS)    |
+| availableDate       | Long     | Date of listing             | 1609059137000   |
+| badge               | Badge    | characteristic    | Including the following 5 signs  |
+| └bestSeller        | String   | Best Seller      | Y or N       |
+| └amazonChoice      | String   | amazon choice    | Y or N       |
+| └newRelease        | String   | release          | Y or N     |
+| └ebc               | String   | A+ Pages               | Y or N      |
+| └video             | String   | Video Introduction     | Y or N      |
+| brand               | String   | brand                 | mermaker    |
+| brandUrl            | String   | brand URL             | /stores/Mermaker/page/984A6448-1C68-4CCA-AD5A-D574EA2D65D5?ref_=ast_bln    |
+| bsrId               | String   | bsr id               | home-garden      |
+| bsrLabel            | String   | BSR label             | Home & Kitchen       |
+| bsrRank             | Integer  | bsr rank             | 1006         |
+| createdTime         | Long     | Creation time             | 1606467137000     |
+| dimensions          | String   | dimensions                 | 7 x 6 x 0.6 inches      |
+| firstRatingDate     | Long     | First comment time       | 1609059137000      |
+| imageUrl            | String   | pictures linking             | [https://images-na.ssl-images-amazon.com/images/I/412616zl5YL .AC_US200.jpg](https://images-na.ssl-images-amazon.com/images/I/412616zl5YL)     |
+| lqs                 | Integer  | Listing Page Quality Score | 97       |
+| nodeId              | String   | node id              | 1063280       |
+| nodeIdPath          | String   | node id path           | 1055398:1063252:1063280     |
+| nodeLabelPath       | String   | Category name string           | Home & Kitchen:Bedding:Blankets & Throws  |
+| nodeLabelPathLocale | String   | Category name string in Chinese       | 家居厨房用品:床上用品:毯子、盖毯       |
+| parent              | String   | parent asin              | B07V5GB9B5      |
+| price               | Float    | price                 | 21.99               |
+| questions           | Integer  | Number of issues             | 5                  |
+| rating              | Float    | score                 | 4.8           |
+| ratings             | Integer  | Score evaluation               | 29229        |
+| sellerId            | String   | seller id              | A13AJ1GXFINAZ    |
+| sellerName          | String   | seller name             | Mermaker         |
+| fulfillment         | String   | Delivery method             | FBA           |
+| sellers             | Integer  | Number of sellers               | 1        |
+| skuList             | List     | sku                  | ["Color: Beige","Size: 47 inches"]    |
+| marketplace         | String   | String               | 见表 1.2    |
+| title               | String   | title                 | mermaker Burritos Tortilla Blanket 2.0 Double Sided 47 inches for Adult and Kids,Giant Funny Realistic Food Throw Blanket,285 GSM Novelty Soft Flannel Taco Blanket (Yellow Blanket-Double Sided) |
+| updatedTime         | Long     | update time             | 1609059137000  |
+| variationList       | List     | variant                 | [{"asin":"B07V5GB9B5","attribute":"Beige"},{"asin":"B08H86SSSF","attribute":"Cookie"}]  |
+| variations          | Integer  | Number of variants             | 14      |
+| weight              | String   | weight                 | 15.2 ounces         |
+| zoomImageUrl        | String   | Large image URL            | [https://images-na.ssl-images-amazon.com/images/I/412616zl5YL .AC_US600.jpg](https://images-na.ssl-images-amazon.com/images/I/412616zl5YL)    |
+| subcategories       | Object   | Subcategory information           |                   |
+| └rank              | Integer  | Ranking of subcategories           | 1              |
+| └code              | String   | Subcategory code           | 17874234011            |
+| └label             | String   | Subclass Target Label           | Kids' Throw Blankets |
+#### Request example
+```
+curl 'https://api.sellersprite.com/v1/asin/US/B07V34QQ3C' \
+  -H 'secret-key: 你的密钥' \
+  -H 'content-type: application/json;charset=utf-8' \
+  --compressed
+```
 ### Reverse ASIN Stat
 
 * Request URI：**GET** /v1/traffic/keyword/stat/{marketplace}/{asin}
@@ -535,7 +596,7 @@ curl 'https://api.sellersprite.com/v1/traffic/keyword' \
 
 ```
 curl 'https://api.sellersprite.com/v1/traffic/keyword/stat/US/B07Z82895W' \
--H 'secret-key: your secret key' \
+-H 'secret-key: your key' \
 -H 'content-type: application/json;charset=UTF-8' \
 --compressed
 ```

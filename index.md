@@ -942,7 +942,7 @@ curl 'https://api.sellersprite.com/v1/traffic/listing' \
 | videoKeywords     | Integer          | Video advertising slogans   |              453                                                                                                                |
 | brandKeywords     | Integer          | Brand advertising slogan |                 223                                                                                                             |
 | badgeLabels       | List             | Overview of traffic sources   | ["SEARCH", "OFFICIAL", "AD"]                                                                                                  |
-| badgeDetails      | Map |         Traffic source details   | {"SEARCH": ["NATURAL_SEARCHING"],"OFFICIAL": ["AMAZON_CHOICE"],"AD": ["SPONSOR_BRAND","SPONSOR_VIDEO","HIGHLY_RATED","ADS"]} |
+| badgeDetails      | Map |         Traffic source details   | {"SEARCH": ["NATURAL_SEARCHING"],"OFFICIAL": ["AMAZON_CHOICE"]} |
 | asinInfo          | Object           |  Asin related information    |                                                                                                                              |
 | -asin             | String            |  asin                   |            B078J8VPVW                                                                                                  |
 | -asinUrl          | String            |  asin url                   |           https://www.amazon.com/dp/B08GHW4TBS                                                       |
@@ -951,7 +951,7 @@ curl 'https://api.sellersprite.com/v1/traffic/listing' \
 | -rating           | Float            |   score                   |        32                                                                                                                      |
 | -reviews          | Integer          |  Score evaluation        |          354                                                                                                                    |
 | -sku              | String            |     SKU                    |    ["Color: Beige","Size: 47 inches"]                   |
-| -title            | String            |      title                    |            Diapers Size 2, 186 Count - Pampers Swaddlers Disposable Baby Diapers, ONE MONTH SUPPLY           |
+| -title            | String            |      title                    |                       |
 | -variations       | Integer          | Number of variants |                    2                                                                                                          |
 
 #### Request example

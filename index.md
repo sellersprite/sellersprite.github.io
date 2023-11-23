@@ -922,9 +922,9 @@ curl 'https://api.sellersprite.com/v1/traffic/listing' \
 | marketplace | String  | marketplace code,see table 1.2                                                                                              | US            | ✓       |
 | q           | String  | The query asin,or keywords                                                                                                  | B07Z82895W    | ✓       |
 | month       | String  | query month, yyyyMM format, default last 30 days                                                                            | 202210        | ✓       |
-| page        | Integer | marketplace code,see table 1.2                                                                                              | US            | ✓       |
-| size        | Integer | The query asin,or keywords                                                                                                  | B07Z82895W    | ✓       |
-| order       | Object  | query month, yyyyMM format, default last 30 days                                                                            | 202210        | ✓       |
+| page        | Integer |                                                                                         | 1            | ✓       |
+| size        | Integer |                                                                                            |  20   | ✓       |
+| order       | Object  |                                                                            |         | ✓       |
 | -field      | String  | The order field,When query ASINs, the default sort is ‘keyword’，When query keywords, the default sort is ‘updatedTime’ | See table 2.4 |         |
 | -desc       | Boolean | True or false                                                                                                               |              |         |
 
@@ -1015,7 +1015,7 @@ bsr=2&categoryId=11260432011&marketplace=US' \
 
 | Name              | Type             | Description              | Example                                                                                |
 | ------------------- | ------------------ | -------------------------- | --------------------------------------------------------------------------------- |
-| asinDetail      | Object  | asin明细       |                                                                                                                                                                               |
+| asinDetail      | Object  | asin detail       |                                                                                                                                                                               |
 | --------------------- | ------------- | -------------------- | ------------------------------------------------------------------------------------- |
 | └asin          | String  | asin           | B00CFM8DI2                                                                                                                                                                |
 | └title         | String  | title           | Boot Bananas Original Shoe Deodorizer  | 

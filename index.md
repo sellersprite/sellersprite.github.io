@@ -1018,7 +1018,7 @@ bsr=2&categoryId=11260432011&marketplace=US' \
 | asinDetail      | Object  | asin明细       |                                                                                                                                                                               |
 | --------------------- | ------------- | -------------------- | ------------------------------------------------------------------------------------- |
 | └asin          | String  | asin           | B00CFM8DI2                                                                                                                                                                |
-| └title         | String  | title           | Boot Bananas Original Shoe Deodorizer | Long-Lasting, Reusable Sports Shoe Deodorizer Odor Neutralizer & Air Purifier | Eco-Conscious | Lasts 6 to 12 Months | 1 Pair |
+| └title         | String  | title           | Boot Bananas Original Shoe Deodorizer  | 
 | └brand         | String  | brand           | Boot Bananas                                                                                                                                                              |
 | └availableDate | Long    | Listing time       | 1397001600000                                                                                                                                                             |
 | └category      | String  | Category name      | Clothing, Shoes & Jewelry                                                                                                                                                 |
@@ -1045,6 +1045,39 @@ curl 'https://api.sellersprite.com/v1/sales/prediction/asin?
 asin=B08C7HDF1F&marketplace=US' \
   -H 'secret-key: You Key' \
   -H 'content-type: application/json;charset=UTF-8' \
+  --compressed
+```
+
+### OCR
+
+* Request URI：**GET** /v1/ocr/identify
+* Request Content-Type:multipart/form-data
+
+#### Request parameter
+
+| Name            | Type         | Description                       | Example       | Required |
+| ----------------- | -------------- | ---------------------------------- | ----------------- | -------------- |
+| type     | Integer  | 0：Remote Pictures；1：Base64 string；2：Picture files   | 2                                                                                                                                                   | ✓       |
+| fn       | String   | Language types to be recognized: CHINESE Or LATIN| CHINESE                                                                                                                                             | ✓       |
+| url      | String   | remote url                                     | https://o.sellersprite.com/docs/202310/sellersprite-2023101210394300742.jpg |              |
+| base64   | String   | base64字符串                                |                                                                                                                                                         |              |
+| image    | File     | Uploaded files                                 | C:\fakepath\photo.jpeg
+
+#### Response parameter
+
+| Name              | Type             | Description              | Example                                                                                   |
+| ------------------- | ------------------ | -------------------------- | ------------------------------------------------------------------- |
+| data          | String          | Recognized text | sellersprite                                                                                                                    |
+| code    | String          |      status code                    |      OK                                                                                                                        |
+| message        | String          |                          |                                                                                                                              |
+
+#### Request example
+
+```
+curl 'https://api.sellersprite.com/v1/ocr/identify' \
+  -H 'secret-key:  Your Key' \
+  -H 'content-type: multipart/form-data' \
+  -F 'image=@/home/image/photo.jpeg' -F 'base64=' -F 'fn=CHINESE' -F 'type=2' -F 'url=' \
   --compressed
 ```
 

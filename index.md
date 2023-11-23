@@ -257,74 +257,6 @@ curl 'https://api.sellersprite.com/v1/product/node?marketplace=US&nodeIdPath=261
 --compressed
 ```
 
-#### Asin details
-
-* Request URI：**GET**  /v1/asin/{marketplace}/{asin}
-
-#### Request parameter
-
-| Name        | Type   | Description      | Example       | Required |
-| ------------- | -------- | ------------------ | --------------- | ---------- |
-| marketplace | String | marketplace code | see table 1.2 | ✓       |
-| asin        | String | asin             | B08GHW4TBS    | ✓       |
-
-#### Response parameter
-
-| Name            | Type    | Description                                | Example                                                                                                                                                                                           |
-| ----------------- | --------- | -------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| asin            | String  | asin                                       | B08GHW4TBS                                                                                                                                                                                        |
-| asinUrl         | String  | asin url                                   | [https://www.amazon.com/dp/B08GHW4TBS](https://www.amazon.com/dp/B08GHW4TBS)                                                                                                                         |
-| availableDate   | Long    |                                            | 1609059137000                                                                                                                                                                                     |
-| badge           | Badge   | badge object                               |                                                                                                                                                                                                   |
-| └bestSeller    | String  | whether to contains best-seller            | Y/N                                                                                                                                                                                               |
-| └amazonChoice  | String  | whether to contains Amazon's choice        | Y/N                                                                                                                                                                                               |
-| └newRelease    | String  | whether to contains newRelease             | Y/N                                                                                                                                                                                               |
-| └ebc           | String  | whether to contains A+                     | Y/N                                                                                                                                                                                               |
-| └video         | String  | whether to contains video                  | Y/N                                                                                                                                                                                               |
-| brand           | String  |                                            | mermaker                                                                                                                                                                                          |
-| brandUrl        | String  |                                            | /stores/Mermaker/page/984A6448-1C68-4CCA-AD5A-D574EA2D65D5?ref_=ast_bln                                                                                                                           |
-| bsrId           | String  |                                            | home-garden                                                                                                                                                                                       |
-| bsrLabel        | String  |                                            | Home & Kitchen                                                                                                                                                                                    |
-| bsrRank         | Integer |                                            | 1006                                                                                                                                                                                              |
-| createdTime     | Long    |                                            | 1606467137000                                                                                                                                                                                     |
-| dimensions      | String  |                                            | 7 x 6 x 0.6 inches                                                                                                                                                                                |
-| firstRatingDate | Long    |                                            | 1609059137000                                                                                                                                                                                     |
-| imageUrl        | String  |                                            | [https://images-na.ssl-images-amazon.com/images/I/412616zl5YL .AC_US200.jpg](https://images-na.ssl-images-amazon.com/images/I/412616zl5YL)                                                           |
-| lqs             | Integer |                                            | 97                                                                                                                                                                                                |
-| nodeId          | String  |                                            | 1063280                                                                                                                                                                                           |
-| nodeIdPath      | String  | complete node id paths, separated by colon | 1055398:1063252:1063280                                                                                                                                                                           |
-| nodeLabelPath   | String  |                                            | Home & Kitchen:Bedding:Blankets & Throws                                                                                                                                                          |
-| parent          | String  | parent asin                                | B07V5GB9B5                                                                                                                                                                                        |
-| price           | Float   |                                            | 21.99                                                                                                                                                                                             |
-| questions       | Integer |                                            | 5                                                                                                                                                                                                 |
-| rating          | Float   |                                            | 4.8                                                                                                                                                                                               |
-| ratings         | Integer | the number of ratings                      | 29229                                                                                                                                                                                             |
-| sellerId        | String  |                                            | A13AJ1GXFINAZ                                                                                                                                                                                     |
-| sellerName      | String  |                                            | Mermaker                                                                                                                                                                                          |
-| fulfillment     | String  |                                            | FBA                                                                                                                                                                                               |
-| sellers         | Integer |                                            | 1                                                                                                                                                                                                 |
-| skuList         | List    |                                            | ["Color: Beige","Size: 47 inches"]                                                                                                                                                                |
-| marketplace     | String  | marketplace code                           | see table 1.2                                                                                                                                                                                     |
-| title           | String  |                                            | mermaker Burritos Tortilla Blanket 2.0 Double Sided 47 inches for Adult and Kids,Giant Funny Realistic Food Throw Blanket,285 GSM Novelty Soft Flannel Taco Blanket (Yellow Blanket-Double Sided) |
-| updatedTime     | Long    |                                            | 1609059137000                                                                                                                                                                                     |
-| variationList   | List    |                                            | [{"asin":"B07V5GB9B5","attribute":"Beige"},{"asin":"B08H86SSSF","attribute":"Cookie"}]                                                                                                            |
-| variations      | Integer |                                            | 14                                                                                                                                                                                                |
-| weight          | String  |                                            | 15.2 ounces                                                                                                                                                                                       |
-| zoomImageUrl    | String  |                                            | [https://images-na.ssl-images-amazon.com/images/I/412616zl5YL .AC_US600.jpg](https://images-na.ssl-images-amazon.com/images/I/412616zl5YL)                                                           |
-| subcategories   | Object  |                                            |                                                                                                                                                                                                   |
-| └rank          | Integer |                                            | 1                                                                                                                                                                                                 |
-| └code          | String  |                                            | 17874234011                                                                                                                                                                                       |
-| └label         | String  |                                            | Kids' Throw Blankets                                                                                                                                                                              |
-
-#### Request example
-
-```
-curl 'https://api.sellersprite.com/v1/asin/US/B07V34QQ3C' \
--H 'secret-key: your secret key' \
--H 'content-type: application/json;charset=utf-8' \
---compressed
-```
-
 ### Keyword mining
 
 * Request URI：**GET** /v1/keyword/miner
@@ -500,14 +432,19 @@ curl 'https://api.sellersprite.com/v1/traffic/keyword' \
 --compressed
 ```
 ### ASIN Detail
+
 * Request URI：**GET** /v1/asin/{marketplace}/{asin}
+  
 #### Request parameter
-| Name    | Type | Description                   | Example      | Required |
-| ----------------- | -------------- | -------------------------------- | ---------------- | -------------- |
-| marketplace | String   | marketplace code,see table 1.2                      | US   | ✓       |
-| asin     | String  | asin                       | B08GHW4TBS | ✓    |
-| month       | String  | Historical month, default to the last 30 days if not passed | 202308     |              |
+
+| Name              | Type           | Description                       | Example          | Required       |
+| ----------------- | -------------- | --------------------------------- | ---------------- | -------------- |
+| marketplace       | String         | marketplace code,see table 1.2    | US               | ✓              |
+| asin              | String         | asin                              | B08GHW4TBS       | ✓              |
+| month             | String         | Historical month, default to the last 30 days if not passed | 202308     |              |
+
 #### Response parameter
+
 | Name        | Type    | Description                      | Example    |
 | ------------------------- | -------------- | -------------------------- | --------------------------------- |
 | asin                | String   | asin                 | B08GHW4TBS     |
@@ -543,7 +480,7 @@ curl 'https://api.sellersprite.com/v1/traffic/keyword' \
 | fulfillment         | String   | Delivery method             | FBA           |
 | sellers             | Integer  | Number of sellers               | 1        |
 | skuList             | List     | sku                  | ["Color: Beige","Size: 47 inches"]    |
-| marketplace         | String   | String               | 见表 1.2    |
+| marketplace         | String   | marketplace               | table 1.2    |
 | title               | String   | title                 | mermaker Burritos Tortilla Blanket 2.0 Double Sided 47 inches for Adult and Kids,Giant Funny Realistic Food Throw Blanket,285 GSM Novelty Soft Flannel Taco Blanket (Yellow Blanket-Double Sided) |
 | updatedTime         | Long     | update time             | 1609059137000  |
 | variationList       | List     | variant                 | [{"asin":"B07V5GB9B5","attribute":"Beige"},{"asin":"B08H86SSSF","attribute":"Cookie"}]  |
@@ -554,13 +491,16 @@ curl 'https://api.sellersprite.com/v1/traffic/keyword' \
 | └rank              | Integer  | Ranking of subcategories           | 1              |
 | └code              | String   | Subcategory code           | 17874234011            |
 | └label             | String   | Subclass Target Label           | Kids' Throw Blankets |
+
 #### Request example
+
 ```
 curl 'https://api.sellersprite.com/v1/asin/US/B07V34QQ3C' \
   -H 'secret-key: 你的密钥' \
   -H 'content-type: application/json;charset=utf-8' \
   --compressed
 ```
+
 ### Reverse ASIN Stat
 
 * Request URI：**GET** /v1/traffic/keyword/stat/{marketplace}/{asin}

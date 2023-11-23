@@ -966,6 +966,43 @@ curl 'https://api.sellersprite.com/v1/traffic/source \
 --compressed
 ```
 
+### BSR Sales Forecast
+
+* Request URI：**GET** /v1/sales/prediction/bsr
+
+#### Request parameter
+
+| Name            | Type         | Description                       | Example       | Required |
+| ----------------- | -------------- | ---------------------------------- | ----------------- | -------------- |
+| marketplace | String   | marketplace,see table 1.2                 | US          | ✓       |
+| bsr                 | Integer  | Ranking of major categories | 1024        | ✓       |
+| categoryId  | String   | First level category node, **Product node** interface return | 11260432011 | ✓     |
+
+#### Response parameter
+
+| Name              | Type             | Description              | Example                                                                                |
+| ------------------- | ------------------ | -------------------------- | --------------------------------------------------------------------------------- |
+| marketplace     | String  | marketplace         | US         |
+| --------------------- | ------------- | ------------------ | ---------------- |
+| bsr             | Integer | 1            | B07Z82895W |
+| categoryLabel   | String  | Category name | 2685       |
+| estDailySales   | Integer | Forecast daily sales| 99         |
+| estMonthSales   | Integer | Forecast 30 day sales | 2965       |
+| itemList        | List    | detail         |                |
+| └bsr           | Integer | bsr          | 1          |
+| └estDailySales | Integer | Forecast daily sales   | 99         |
+| └estMonthSales | Integer |Forecast 30 day sales | 2965       |
+
+#### Request example
+
+```
+curl 'https://api.sellersprite.com/v1/sales/prediction/bsr?
+bsr=2&categoryId=11260432011&marketplace=US' \
+  -H 'secret-key: Your Key' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --compressed
+```
+
 ### Appendix
 
 #### Table 1.1 Query month

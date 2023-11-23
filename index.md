@@ -496,7 +496,7 @@ curl 'https://api.sellersprite.com/v1/traffic/keyword' \
 
 ```
 curl 'https://api.sellersprite.com/v1/asin/US/B07V34QQ3C' \
-  -H 'secret-key: 你的密钥' \
+  -H 'secret-key: Your Key' \
   -H 'content-type: application/json;charset=utf-8' \
   --compressed
 ```

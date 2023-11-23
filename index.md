@@ -1059,8 +1059,8 @@ asin=B08C7HDF1F&marketplace=US' \
 | ----------------- | -------------- | ---------------------------------- | ----------------- | -------------- |
 | type     | Integer  | 0：Remote Pictures；1：Base64 string；2：Picture files   | 2                                                                                                                                                   | ✓       |
 | fn       | String   | Language types to be recognized: CHINESE Or LATIN| CHINESE                                                                                                                                             | ✓       |
-| url      | String   | remote url                                     | https://o.sellersprite.com/docs/202310/sellersprite-2023101210394300742.jpg |              |
-| base64   | String   | base64字符串                                |                                                                                                                                                         |              |
+| url      | String   | remote url                                     | |              |
+| base64   | String   | Base64 string                                |                                                                                                                                                         |              |
 | image    | File     | Uploaded files                                 | C:\fakepath\photo.jpeg
 
 #### Response parameter

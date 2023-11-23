@@ -584,7 +584,7 @@ curl 'https://api.sellersprite.com/v1/google/trends?googleProp=web&keyword=iphon
 | ---------------------- | --------- | ---------------------------------------------------------------------- | -------------------------------- | ---------- |
 | marketplace          | String  | marketplace code                                                     | see table 1.2                  | ✓       |
 | month                | String  | Historical date, yyyyMM format, default last 30 days                 | 202203                         |          |
-| departments          | List    | see Keyword research department interface,pass the code              | ["automotive","baby-products"] |          |
+| departments          | List    | see **Keyword Research Category** interface,pass the code            | ["automotive","baby-products"] |          |
 | keywords             | String  |                                                                      | N95                            |          |
 | excludeKeywords      | String  |                                                                      | portable                       |          |
 | minSearches          | Integer |                                                                      | 100                            |          |
@@ -688,6 +688,32 @@ curl 'https://api.sellersprite.com/v1/keyword-research' \
 --compressed
 ```
 
+### Keyword Research Category
+
+* Request URI：**GET** /v1/keyword-research/department
+
+#### Request parameter
+
+| Name        | Type   | Description      | Example       | Required |
+| ------------- | -------- | ------------------ | --------------- | ---------- |
+| marketplace | String | marketplace code | see table 1.2 | ✓       |
+
+#### Response parameter
+
+| Name  | Type   | Description      | Example                        |
+| ------- | -------- | ------------------ | -------------------------------- |
+| code  | String | department name  | automotive                     |
+| label | String | department label | Automotive Parts & Accessories |
+
+#### Request example
+
+```
+curl 'https://api.sellersprite.com/v1/keyword-research/department?marketplace=US' \
+-H 'secret-key: your secret key' \
+-H 'content-type: application/json;charset=UTF-8' \
+--compressed
+```
+
 ### ABA Search Terms
 
 * Request URI：**POST** /v1/aba/research
@@ -779,32 +805,6 @@ curl 'https://api.sellersprite.com/v1/aba/research' \
 --data-raw $'{"marketplace":"US","rankGrowthType":"W1","date":"20220129"}' \
 --compressed
 ````
-
-### Department Research
-
-* Request URI：**GET** /v1/keyword-research/department
-
-#### Request parameter
-
-| Name        | Type   | Description      | Example       | Required |
-| ------------- | -------- | ------------------ | --------------- | ---------- |
-| marketplace | String | marketplace code | see table 1.2 | ✓       |
-
-#### Response parameter
-
-| Name  | Type   | Description      | Example                        |
-| ------- | -------- | ------------------ | -------------------------------- |
-| code  | String | department name  | automotive                     |
-| label | String | department label | Automotive Parts & Accessories |
-
-#### Request example
-
-```
-curl 'https://api.sellersprite.com/v1/keyword-research/department?marketplace=US' \
--H 'secret-key: your secret key' \
--H 'content-type: application/json;charset=UTF-8' \
---compressed
-```
 
 ### Related Products Stat
 

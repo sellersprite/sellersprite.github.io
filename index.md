@@ -911,7 +911,7 @@ curl 'https://api.sellersprite.com/v1/traffic/listing' \
 --compressed
 ```
 
-### Keyword Distribution
+### Check The Source Of Traffic
 
 * Request URI：**POST** /v1/traffic/source
 
@@ -925,40 +925,40 @@ curl 'https://api.sellersprite.com/v1/traffic/listing' \
 | page        | Integer |                                                                                         | 1            | ✓       |
 | size        | Integer |                                                                                            |  20   | ✓       |
 | order       | Object  |                                                                            |         | ✓       |
-| -field      | String  | The order field,When query ASINs, the default sort is ‘keyword’，When query keywords, the default sort is ‘updatedTime’ | See table 2.4 |         |
+| -field      | String  | sort field | See table 2.4 |         |
 | -desc       | Boolean | True or false                                                                                                               |              |         |
 
 #### Response parameter
 
 | Name              | Type             | Description              | Example                                                                                                                       |
 | ------------------- | ------------------ | -------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
-| keywords          | Integer          | Number of above keywords | B078J8VPVW                                                                                                                    |
-| searchKeywords    | Integer          |                          |                                                                                                                              |
-| acKeywords        | Integer          |                          |                                                                                                                              |
-| editorialKeywords | Integer          |                          |                                                                                                                              |
-| fourStarsKeywords | Integer          |                          |                                                                                                                              |
-| hrKeywords        | Integer          |                         |                                                                                                                              |
-| adKeywords        | Integer          |                         |                                                                                                                              |
-| videoKeywords     | Integer          |                         |                                                                                                                              |
-| brandKeywords     | Integer          |                          |                                                                                                                              |
-| badgeLabels       | List             |                         | ["SEARCH", "OFFICIAL", "AD"]                                                                                                  |
-| badgeDetails      | Map |                         | {"SEARCH": ["NATURAL_SEARCHING"],"OFFICIAL": ["AMAZON_CHOICE"],"AD": ["SPONSOR_BRAND","SPONSOR_VIDEO","HIGHLY_RATED","ADS"]} |
-| asinInfo          | Object           |                         |                                                                                                                              |
-| -asin             | Float            |                         |                                                                                                                              |
-| -asinUrl          | Float            |                         |                                                                                                                              |
-| -currency         | Float            |                          |                                                                                                                              |
-| -price            | Float            |                          |                                                                                                                              |
-| -rating           | Float            |                          |                                                                                                                              |
-| -reviews          | Integer          |                          |                                                                                                                              |
-| -sku              | Float            |                         |                                                                                                                              |
-| -title            | Float            |                          |                                                                                                                              |
-| -variations       | Integer          | number of variation asin |                                                                                                                              |
+| keywords          | Integer          | All traffic terms | 1423                                                                                                                    |
+| searchKeywords    | Integer          | Natural search terms      |        23                                                                                                                      |
+| acKeywords        | Integer          | AC Recommendation     |        43                                                                                                                      |
+| editorialKeywords | Integer          | ER Recommendation      |     234                                                                                                                         |
+| fourStarsKeywords | Integer          | 4-star recommendation        |    234                                                                                                                 |
+| hrKeywords        | Integer          | HR Recommendation   |                    234                                                                                                          |
+| adKeywords        | Integer          | SP advertising slogan       |             214                                                                                                                |
+| videoKeywords     | Integer          | Video advertising slogans   |              453                                                                                                                |
+| brandKeywords     | Integer          | Brand advertising slogan |                 223                                                                                                             |
+| badgeLabels       | List             | Overview of traffic sources   | ["SEARCH", "OFFICIAL", "AD"]                                                                                                  |
+| badgeDetails      | Map |         Traffic source details   | {"SEARCH": ["NATURAL_SEARCHING"],"OFFICIAL": ["AMAZON_CHOICE"],"AD": ["SPONSOR_BRAND","SPONSOR_VIDEO","HIGHLY_RATED","ADS"]} |
+| asinInfo          | Object           |  Asin related information    |                                                                                                                              |
+| -asin             | String            |  asin                   |            B078J8VPVW                                                                                                  |
+| -asinUrl          | String            |  asin url                   |           https://www.amazon.com/dp/B08GHW4TBS                                                       |
+| -currency         | String            |  Currency code               |      $                                                                                                                        |
+| -price            | Float            |    price                |         23                                                                                                                     |
+| -rating           | Float            |   score                   |        32                                                                                                                      |
+| -reviews          | Integer          |  Score evaluation        |          354                                                                                                                    |
+| -sku              | String            |     SKU                    |    ["Color: Beige","Size: 47 inches"]                   |
+| -title            | String            |      title                    |            Diapers Size 2, 186 Count - Pampers Swaddlers Disposable Baby Diapers, ONE MONTH SUPPLY           |
+| -variations       | Integer          | Number of variants |                    2                                                                                                          |
 
 #### Request example
 
 ```
 curl 'https://api.sellersprite.com/v1/traffic/source \
--H 'secret-key: your secret key' \
+-H 'secret-key: Your Key' \
 -H 'content-type: application/json;charset=UTF-8' \
 --data-raw $'{"marketplace":"US","q":"B07Z82895W","month":"202210"}' \
 --compressed

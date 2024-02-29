@@ -768,6 +768,8 @@ curl 'https://api.sellersprite.com/v1/keyword-research/department?marketplace=US
 | searchRankCv           | Integer |                               | 19                            |
 | searchRankCr           | Double  |                               | 0.2346                        |
 | searches               | Integer |                               |                               |
+| purchases              | Integer |Purchase quantity              | 2492                          |
+| purchaseRate           | Double  |Purchase rate                  | 0.0054                        |
 | searchRankGrowthValue  | Integer |                               |                               |
 | searchRankGrowthRate   | Double  |                               |                               |
 | cvsShareRate           | Double  |                               |                               |

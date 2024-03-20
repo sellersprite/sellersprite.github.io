@@ -437,106 +437,106 @@ curl 'https://api.sellersprite.com/v1/traffic/keyword' \
 
 | **Name**             | **Type**    | **Description**                                       | **Example**               | **Required** |
 | -------------------------- | ----------------- | ---------------------------------------------------- | ------------------------ | -------------- |
-| **marketplace**          | **String**      | **marketplace code,see table 1.2**                                   | **US**                 | **✓**       |
-| **hist**or**yDat**e      | **String**      | **Historical month, default to the last 30 days if not passed** | **202201**             |              |
-| **asinList**             | **L**ist        | **asin list**                                       | **["**B07Z82895W**"]** | **✓**       |
-| **queryType**            | **Integer**     | **Query Method 0 All Variants 1 Bestseller Variant 2 Current Variant, Default 2** | **2**                  |              |
-| **minSearches**          | **Integer**     |                                  | **1**00                |              |
-| **maxSearches**          | **Integer**     |                                    | **30**0                |              |
-| **minSearchRank**        | **Integer**     |                                    | **33**                 |              |
-| **maxSearchRank**        | **Integer**     |                                    | **3223**               |              |
-| **minPurchases**         | **Integer**     |                                   | **6**                  |              |
-| **maxPurchases**         | **Integer**     |                                     | **34**                 |              |
-| **minPurchase**sRate** | **Float**       |                                      | **3**                  |              |
-| **maxPurchase**sRate** | **Float**       |                                      | **43**                 |              |
-| **minProducts**          | **Integer**     |                                      | **10**                 |              |
-| **maxProducts**          | **Integer**     |                                      | **90**                 |              |
-| **minSupplyDemandRatio** | **Float**       |                                    | **11.2**               |              |
-| **maxSupplyDemandRatio** | **Float**       |                                      | **45.2**               |              |
-| **minBid**               | **Float**       | **Minimum PPC bidding**                                    | **10.2**               |              |
-| **maxBid**               | **Float**       | **Maximum PPC bidding**                                    | **23.1**               |              |
-| **minAd**Products**    | **Integer**     | **Minimum number of advertising competitors**                                 | **123**                |              |
-| **maxAd**Products**    | **Integer**     | **Maximum number of advertising competitors**                                 | **345**                |              |
-| **minAvgPrice**          | **Float**       |                                        | **20.0**               |              |
-| **maxAvgPrice**          | **Float**       |                                        | **30.3**               |              |
-| **minWordCount**     | **Integer**     |                                        | **2**                  |              |
-| **maxWordCount**     | **Integer**     |                                        | **4**                  |              |
-| **includeKeywords**      | **List**        |                                 | **["phone stand"]**    |              |
-| **excludeKeywords**      | **List**        |                                       | **["phone stand"]**    |              |
-| **minSPR**               | **Integer**     |                                     | **2**                  |              |
-| **maxSPR**               | **Integer**     |                                       | **16**                 |              |
-| **minTitleDensity**      | **Integer**     |                                  | **2**                  |              |
-| **maxTitleDensity**      | **Integer**     |                                    | **23**                 |              |
-| **minMonopolyClickRate** | **Float**       | **Minimum Click Concentration**                                 | **23.4**               |              |
-| **maxMonopolyClickRate** | **Float**       | **Maximum Click Concentration**                                 | **53.1**               |              |
-| **minTrafficPercentage** | **Float**       | **Minimum traffic proportion**                                   | **45**                 |              |
-| **maxTrafficPercentage** | **Float**       | **Maximum traffic proportion**                                   | **23**                 |              |
-| **minConversionRate**    | **Float**       | **Minimum Conversion Share**                                     | **0.23**               |              |
-| **maxConversionRate**    | **Float**       | **Maximum Conversion Share**                                     | **1.4**                |              |
-| **minCompetitors**       | **Integ**er     | **Minimum Related ASINs**                                     | **4**                  |              |
-| **maxCompetitors**       | **Integ**er     | **Maximum Related ASINs**                                     | **23**                 |              |
-| **amazonChoice**         | **Boolean**     |                                  | **true**               |              |
-| **page**                 | **Integ**er     |                                 | **默认：1**            |              |
-| **size**                 | **In**te**ger** |                                        | **默认：50**           |              |
-| **order**                | **O**b**j**ect  |                                            |                        |              |
-| **└field**              | **String**      |                                        | **见表2.5**            |              |
-| **└desc**               | **boolean**     | **True is in descending order,False is in ascending order**                         | **default true**           |        
+| marketplace          | String      | marketplace code,see table 1.2                                   | US                 | ✓       |
+| historyDate      | String      | Historical month, default to the last 30 days if not passed | 202201             |              |
+| asinList             | List        | asin list                                       | ["B07Z82895W"] | ✓       |
+| queryType            | Integer     | Query Method 0 All Variants 1 Bestseller Variant 2 Current Variant, Default 2 | 2                  |              |
+| minSearches          | Integer     |                                  | 100                |              |
+| maxSearches          | Integer     |                                    | 300                |              |
+| minSearchRank        | Integer     |                                    | 33                 |              |
+| maxSearchRank        | Integer     |                                    | 3223               |              |
+| minPurchases         | Integer     |                                   | 6                  |              |
+| maxPurchases         | Integer     |                                     | 34                 |              |
+| minPurchasesRate | Float       |                                      | 3                  |              |
+| maxPurchasesRate | Float       |                                      | 43                 |              |
+| minProducts          | Integer     |                                      | 10                 |              |
+| maxProducts          | Integer     |                                      | 90                 |              |
+| minSupplyDemandRatio | Float       |                                    | 11.2               |              |
+| maxSupplyDemandRatio | Float       |                                      | 45.2               |              |
+| minBid               | Float       | Minimum PPC bidding                                    | 10.2               |              |
+| maxBid               | Float       | Maximum PPC bidding                                    | 23.1               |              |
+| minAdProducts    | Integer     | Minimum number of advertising competitors                                 | 123                |              |
+| maxAdProducts    | Integer     | Maximum number of advertising competitors                                 | 345                |              |
+| minAvgPrice          | Float       |                                        | 20.0               |              |
+| maxAvgPrice          | Float       |                                        | 30.3               |              |
+| minWordCount     | Integer     |                                        | 2                  |              |
+| maxWordCount     | Integer     |                                        | 4                  |              |
+| includeKeywords      | List        |                                 | ["phone stand"]    |              |
+| excludeKeywords      | List        |                                       | ["phone stand"]    |              |
+| minSPR               | Integer     |                                     | 2                  |              |
+| maxSPR               | Integer     |                                       | 16                 |              |
+| minTitleDensity      | Integer     |                                  | 2                  |              |
+| maxTitleDensity      | Integer     |                                    | 23                 |              |
+| minMonopolyClickRate | Float       | Minimum Click Concentration                                 | 23.4               |              |
+| maxMonopolyClickRate | Float       | Maximum Click Concentration                                 | 53.1               |              |
+| minTrafficPercentage | Float       | Minimum traffic proportion                                   | 45                 |              |
+| maxTrafficPercentage | Float       | Maximum traffic proportion                                   | 23                 |              |
+| minConversionRate    | Float       | Minimum Conversion Share                                     | 0.23               |              |
+| maxConversionRate    | Float       | Maximum Conversion Share                                     | 1.4                |              |
+| minCompetitors       | Integer     | Minimum Related ASINs                                     | 4                  |              |
+| maxCompetitors       | Integer     | Maximum Related ASINs                                     | 23                 |              |
+| amazonChoice         | Boolean     |                                  | true               |              |
+| page                 | Integer     |                                 | 默认：1            |              |
+| size                 | Integer |                                        | 默认：50           |              |
+| order                | Object  |                                            |                        |              |
+| └field              | String      |                                        | 见表2.5            |              |
+| └desc               | boolean     | True is in descending order,False is in ascending order                         | default true           |           
 
 #### Response parameter
 
 | **Name**                 | **Type** | **Description**             | **Example**               |
 | ------------------------------ | -------------- | -------------------------- | ------------------------ |
-| **keyword**                  | **String**   |               | **N95**                |
-| **keywordCn**                | **String**   |      | **用于录音的电话支架** |
-| **searches**                 | **Integer**  |                | **21582**              |
-| **p**u**rchas**es            | **Integer**  |              | **1996**               |
-| **purchase**Rate             | **Float**    |              | **0.0925**             |
-| **products**                 | **Integer**  |                | **1645**               |
-| **bid**Min                   | **Float**    |           | **1.34**               |
-| **bidMax**                   | **Float**    |           | **3.21**               |
-| **bid**                      | **Float**    |               | **1.6**                |
-| **badges**                   | **List**     |            | **see table 1.10**           |
-| **rankPosition**             | **Object**   | **Natural ranking**             |                        |
-| **└page**                   | **Integer**  |                | **3**                  |
-| **└pageSize**               | **Integer**  |                | **60**                 |
-| **└index**                  | **Integer**  |          | **10**                 |
-| **└position**               | **Integer**  |        | **106**                |
-| **└updatedTime**            | **long**     | **Ranking time**             |                        |
-| **adPosition**               | **Object**   | **Advertising ranking**             |                        |
-| **└page**                   | **Integer**  |                | **2**                  |
-| **└pageSize**               | **Integer**  |        | **63**                 |
-| **└index**                  | **Integer**  |          | **37**                 |
-| **└position**               | **Integer**  |        | **85**                 |
-| **└updatedTime**            | **long**     | **Ranking time**             |                        |
-| **updatedTime**              | **long**     | **update time**             |                        |
-| **searchesRank**             | **Integer**  | **Weekly search volume ranking**         | **25**                 |
-| **searchesRankTimeFrom**     | **Long**     | **Weekly search volume ranking time range** |                        |
-| **searchesRankTimeTo**       | **Long**     | **Weekly search volume ranking time range**                         |                        |
-| **l**atest1daysAds           | **Integer**  | **Number of advertising competitors in the past day**    | **70**                 |
-| **latest7daysAds**           | **Integer**  | **Number of advertising competitors in the past 7 days**    | **100**                |
-| **latest30daysAds**          | **Integer**  | **Number of advertising competitors in the past 30 days**   | **280**                |
-| **supplyDemandRatio**        | **Float**    |                | **3.8**                |
-| **trafficPercentage**        | **Float**    |              | **0.015**              |
-| **trafficKeywordType**       | **List**     |          | **see table 2.0**            |
-| **conversionKeywordType**    | **List**     |          | **see table 2.1**            |
-| **calculatedWeeklySearches** | **Float**    | **Estimated weekly search volume**         | **40**                 |
-| **avgPrice**                 | **Float**    |              | **36.14**              |
-| **avgR**at**ing**s           | **Integer**  |            | **12223**              |
-| **avgRating**                | **Float**    |            | **4.5**                |
-| **titleDensity**             | **Integer**  |              | **42.9**               |
-| **spr**                      | **Integer**  |                   | **6**                  |
-| **monopolyClickRate**        | **Float**    |            | **0.3**                |
-| **top3ClickingRate**         | **Float**    | **First three clicks**             | **0.0813**             |
-| **top3ConversionRate**       | **Float**    | **Top three conversions**             | **0.2011**             |
-| **relationVariationsItems**  | **List**     | **From which variants**       |                        |
-| **└**marketplace            | **String**   |                  | **US**                  |
-| **└**asin                   | **String**   |                          | **B08P6SC34B**         |
-| **└**imageUrl               | **String**   |              | **10**                 |
-| **└**trafficPercentage      | **Float**    |              | **54.6**               |
-| **└**title                  | **String**   |                  |                        |
-| **└**price                  | **Float**    |                  | **60**                 |
-| **└**reviews                | **Float**    |                | **10**                 |
-| **└**rating                 | **Float**    |                  | **4.5**                |
+| keyword                  | String   |               | N95                |
+| keywordCn                | String   |      | 用于录音的电话支架 |
+| searches                 | Integer  |                | 21582              |
+| purchases            | Integer  |              | 1996               |
+| purchaseRate             | Float    |              | 0.0925             |
+| products                 | Integer  |                | 1645               |
+| bidMin                   | Float    |           | 1.34               |
+| bidMax                   | Float    |           | 3.21               |
+| bid                      | Float    |               | 1.6                |
+| badges                   | List     |            | see table 1.10           |
+| rankPosition             | Object   | Natural ranking             |                        |
+| └page                   | Integer  |                | 3                  |
+| └pageSize               | Integer  |                | 60                 |
+| └index                  | Integer  |          | 10                 |
+| └position               | Integer  |        | 106                |
+| └updatedTime            | long     | Ranking time             |                        |
+| adPosition               | Object   | Advertising ranking             |                        |
+| └page                   | Integer  |                | 2                  |
+| └pageSize               | Integer  |        | 63                 |
+| └index                  | Integer  |          | 37                 |
+| └position               | Integer  |        | 85                 |
+| └updatedTime            | long     | Ranking time             |                        |
+| updatedTime              | long     | update time             |                        |
+| searchesRank             | Integer  | Weekly search volume ranking         | 25                 |
+| searchesRankTimeFrom     | Long     | Weekly search volume ranking time range |                        |
+| searchesRankTimeTo       | Long     | Weekly search volume ranking time range                         |                        |
+| latest1daysAds           | Integer  | Number of advertising competitors in the past day    | 70                 |
+| latest7daysAds           | Integer  | Number of advertising competitors in the past 7 days    | 100                |
+| latest30daysAds          | Integer  | Number of advertising competitors in the past 30 days   | 280                |
+| supplyDemandRatio        | Float    |                | 3.8                |
+| trafficPercentage        | Float    |              | 0.015              |
+| trafficKeywordType       | List     |          | see table 2.0            |
+| conversionKeywordType    | List     |          | see table 2.1            |
+| calculatedWeeklySearches | Float    | Estimated weekly search volume         | 40                 |
+| avgPrice                 | Float    |              | 36.14              |
+| avgRatings           | Integer  |            | 12223              |
+| avgRating                | Float    |            | 4.5                |
+| titleDensity             | Integer  |              | 42.9               |
+| spr                      | Integer  |                   | 6                  |
+| monopolyClickRate        | Float    |            | 0.3                |
+| top3ClickingRate         | Float    | First three clicks             | 0.0813             |
+| top3ConversionRate       | Float    | Top three conversions             | 0.2011             |
+| relationVariationsItems  | List     | From which variants       |                        |
+| └marketplace            | String   |                  | US                  |
+| └asin                   | String   |                          | B08P6SC34B         |
+| └imageUrl               | String   |              | 10                 |
+| └trafficPercentage      | Float    |              | 54.6               |
+| └title                  | String   |                  |                        |
+| └price                  | Float    |                  | 60                 |
+| └reviews                | Float    |                | 10                 |
+| └rating                 | Float    |                  | 4.5                |
 
 #### Request example
 

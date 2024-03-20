@@ -476,10 +476,10 @@ curl 'https://api.sellersprite.com/v1/traffic/keyword' \
 | minCompetitors       | Integer     | Minimum Related ASINs                                     | 4                  |              |
 | maxCompetitors       | Integer     | Maximum Related ASINs                                     | 23                 |              |
 | amazonChoice         | Boolean     |                                  | true               |              |
-| page                 | Integer     |                                 | 默认：1            |              |
-| size                 | Integer |                                        | 默认：50           |              |
+| page                 | Integer     |                                 | default 1            |              |
+| size                 | Integer |                                        | default 50           |              |
 | order                | Object  |                                            |                        |              |
-| └field              | String      |                                        | 见表2.5            |              |
+| └field              | String      |                                        | set table 2.5            |              |
 | └desc               | boolean     | True is in descending order,False is in ascending order                         | default true           |           
 
 #### Response parameter
@@ -1427,3 +1427,21 @@ See link for 2-character codes for other countries：[http://www.mamicode.com/in
 | spv         |             |
 | ads         |             |
 | updatedTime |             |
+
+#### Table 2.5 Reverse Multiple ASINs sorting field
+
+| **Value**            | **Description**       |
+| ----------------------- | ---------------- |
+| trafficPercentage |   Related ASINs |
+| relationAsin      | Related ASINs   |
+| searchesRank      | ABA Rank/W  |
+| searches          |    M. Searches|
+| purchases         |  M. Purchase  |
+| purchaseRate      | Purchase Rate     |
+| spr               | spr        |
+| titleDensity      | Title Density   |
+| products          | Products     |
+| supplyDemandRatio | DSR     |
+| adProduct         | Sponsored ASINs |
+| monopolyClickRate | Click Concentration |
+| bid               | PPC Bid    |

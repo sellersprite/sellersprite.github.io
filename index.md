@@ -1463,9 +1463,9 @@ curl 'https://api.sellersprite.com/v1/global/brand/list' \
 | └└languageCode                    | String           | Language Type         | en                      |
 
 #### AddressDto structure:
-| Name                            | Type         | Description         | Example                    |
-| ----------------------------------------- | ---------------------- | ---------------------- | ----------------------------- |
-| kind           | String     | 类型     | Legal Entity                                                                                                                          
+| 参数名称       | 参数类型   | 参数说明 | 举例                                                                                                                                  |
+| -------------------- | ---------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| kind           | String     | 类型     | Legal Entity                                                                                                                          |
 | identifier     | String     | 标识     | 33744042                                                                                                                              |
 | countryCode    | String     | 国家编码 | US                                                                                                                                    |
 | contact        | JSONObject | 联系方式 |                                                                                                                                           |
@@ -1476,6 +1476,7 @@ curl 'https://api.sellersprite.com/v1/global/brand/list' \
 | fullName       | List       | 完整名称 |                                                                                                                                           |
 | └text         | String     | 描述     | ANKER INC                                                                                                                             |
 | └languageCode | String     | 语言     | en                                                                                                                                    |
+
 
 #### Request example
 ```

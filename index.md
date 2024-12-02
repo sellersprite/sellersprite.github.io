@@ -1463,6 +1463,7 @@ curl 'https://api.sellersprite.com/v1/global/brand/list' \
 | └└languageCode                    | String           | Language Type         | en                      |
 
 #### AddressDto structure:
+
 | 参数名称       | 参数类型   | 参数说明 | 举例                                                                                                                                  |
 | -------------------- | ---------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | kind           | String     | 类型     | Legal Entity                                                                                                                          |

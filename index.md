@@ -1201,6 +1201,77 @@ curl 'https://api.sellersprite.com/v1/ocr/identify' \
   -F 'image=@/home/image/photo.jpeg' -F 'base64=' -F 'fn=CHINESE' -F 'type=2' -F 'url=' \
   --compressed
 ```
+### Global Trademark Library - Data Scope
+
+* Request URI：**GET** /v1/ocr/identify:/v1/global/brand/range
+
+#### Response parameter
+
+| Name    | Type | Description | Example   |
+| ----------------- | -------------- | -------------- | ------------ |
+| office      | String   | Simplified code     | AD     |
+| officeLabel | String   | Chinese name | 安道尔 |
+
+#### Request example
+
+```
+curl 'https://api.sellersprite.com/v1/global/brand/range' \
+  -H 'secret-key: Your Key' \
+  -H 'content-type: application/json;charset=UTF-8' \
+  --compressed
+```
+###  Global Trademark Library - Statistics
+
+* Request URI：**POST** /v1/global/brand/stats
+* Request Content-Type:multipart/form-data
+
+#### Request parameter
+
+| Name    | Type | Description               | Example                  | Required |
+| ----------------- | -------------- | ---------------------------- | --------------------------- | -------------- |
+| office      | List     | Data range, see previous interface | ["US"]                | ✓       |
+| text        | String   | query text               | CHINESE               | ✓       |
+| imageBase64 | String   | Base64 string           |                           |              |
+| imageFile   | File     | Upload files             | C:\fakepath\photo.jpeg |              |
+
+#### Response parameter
+
+| Name        | Type | Description   | Example                     |
+| --------------------- | -------------- | ---------------- | ------------------------------ |
+| office          | List     | intellectual property office | [{"key":"US","count":2}] |
+| └key           | String   | value         | US                       |
+| └count         | Integer  | number       | 2                        |
+| brandName       | List     | Brand name     | Same format as office fields             |
+| └key           | String   | value         | ADVENTURE CLUB           |
+| └count         | Integer  | number       | 4                        |
+| status          | List     | status       | Same format as office fields             |
+| └key           | String   | value         | Registered               |
+| └count         | Integer  | number       | 12                       |
+| applicant       | List     | applicant     | Same format as office fields             |
+| └key           | String   | value         | ANKER INC                |
+| └count         | Integer  | number       | 4                        |
+| niceClass       | List     | Nice Classification   | Same format as office fields             |
+| └key           | String   | value         | 5                        |
+| └count         | Integer  | number       | 2                        |
+| └label         | String   | Classification name   | 医药用品                 |
+| applicationYear | List     | Application year   | Same format as office fields             |
+| └key           | String   | value         | 1985                     |
+| └count         | Integer  | number       | 5                        |
+| expiryYear      | List     | Expired year   | Same format as office fields             |
+| └key           | String   | value         | 2026                     |
+| └count         | Integer  | number       | 2                        |
+
+#### Request example
+
+```
+curl 'https://api.sellersprite.com/v1/ocr/identify' \
+  -H 'secret-key: Your Key' \
+  -H 'content-type: multipart/form-data' \
+  -F "imageFile=@/home/image/人像.jpeg" -F "imageBase64=" -F "text=ANKER" -F "office=US" -F "office=CA" \
+ --compressed
+```
+
+
 
 ### Appendix
 

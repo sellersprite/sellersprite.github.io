@@ -1463,7 +1463,19 @@ curl 'https://api.sellersprite.com/v1/global/brand/list' \
 | └└languageCode                    | String           | Language Type         | en                      |
 
 #### AddressDto structure:
-
+| Name                            | Type         | Description         | Example                    |
+| ----------------------------------------- | ---------------------- | ---------------------- | ----------------------------- |
+| kind           | String     | type     | Legal Entity                                                                                                                          |
+| identifier     | String     | sign     | 33744042                                                                                                                              |
+| countryCode    | String     | country code | US                                                                                                                                    |
+| contact        | JSONObject | contact type |                                                                                                                                           |
+| fullAddress    | List       | full address |                                                                                                                                           |
+| └text         | String     | describe     |                                                                                                                                           |
+| └languageCode | String     | language     | en                                                                                                                                    |
+| └imageUrl     | String     | image URL  | [https://o.sellersprite.com/w/brands/ustm/US502022097612203/ee45f.jpg](https://o.sellersprite.com/w/brands/ustm/US502022097612203/ee45f.jpg) |
+| fullName       | List       | complete name |                                                                                                                                           |
+| └text         | String     | describe     | ANKER INC                                                                                                                             |
+| └languageCode | String     | language     | en    
 | kind           | String     | type     | Legal Entity                                                                                                                          |
 | -------------------- | ---------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
 | identifier     | String     | sign     | 33744042                                                                                                                              |

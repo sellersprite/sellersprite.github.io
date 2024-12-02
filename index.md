@@ -1271,6 +1271,220 @@ curl 'https://api.sellersprite.com/v1/ocr/identify' \
  --compressed
 ```
 
+### Global Trademark Library - List
+
+* Request URI：**POST** /v1/global/brand/list
+* Request Content-Type:multipart/form-data
+
+#### Request parameter
+
+| Name        | Type | Description                                      | Example                  | Required |
+| --------------------- | -------------- | --------------------------------------------------- | --------------------------- | -------------- |
+| office          | List     | Data range, see previous interface                        | ["US"]                |              |
+| text            | String   | query text                                      | CHINESE               | ✓       |
+| imageBase64     | String   | Base64 string                                  |                           |              |
+| imageFile       | File     | Upload files                                    | C:\fakepath\photo.jpeg |              |
+| brandName       | List     | Brand name, field parameters can be found in the statistical interface                    | ["ADVENTURE CLUB"]    |              |
+| status          | List     | Status and field parameters can be found in the statistical interface                      | ["Registered"]        |              |
+| applicant       | List     | Applicant, please refer to the statistical interface for field parameters                    | ["ANKER INC"]         |              |
+| niceClass       | List     | Nice classification, see statistical interface for field parameters                  | [5]                   |              |
+| applicationYear | List     | Application year, field parameters can be found in the statistical interface                  | ["1985"]              |              |
+| expiryYear      | List     | Expired year, field parameters can be found in the statistical interface                  | ["2026"]              |              |
+| order.field     | String   | Sort fields, default relevance, applicationDate, application date |                           |              |
+| order.desc      | Boolean  | True descending order, false ascending order, default to true                 |                           |              |
+| page            | Integer  | page number                                          | 1                     |              |
+| size            | Integer  | Number of articles per page, maximum 100                             | 20                    |              |
+
+#### Response parameter
+
+| Name                | Type   | Description     | Example                                                                                                                                  |
+| ----------------------------- | ---------------- | ------------------ | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| id                      | String     | id           | US502022097612203                                                                                                                     |
+| applicant               | List       | applicant       | ANKER INC                                                                                                                             |
+| applicantCountryCode    | Integer    | Applicant's country   | US                                                                                                                                    |
+| applicants              | List       | Applicant Details   | 格式同office                                                                                                                          |
+| └kind                  | String     | type         | Legal Entity                                                                                                                          |
+| └identifier            | String     | sign         | 33744042                                                                                                                              |
+| └countryCode           | String     | Country Code     | US                                                                                                                                    |
+| └contact               | JSONObject | contact information     |                                                                                                                                           |
+| └fullAddress           | List       | Full address     |                                                                                                                                           |
+| └└text                | String     | describe         |                                                                                                                                           |
+| └└languageCode        | String     | language         | en                                                                                                                                    |
+| └└imageUrl            | String     | Image URL      | [https://o.sellersprite.com/w/brands/ustm/US502022097612203/ee45f.jpg](https://o.sellersprite.com/w/brands/ustm/US502022097612203/ee45f.jpg) |
+| └fullName              | List       | Complete Name     |                                                                                                                                           |
+| └└text                | String     | describe         | ANKER INC                                                                                                                             |
+| └└languageCode        | String     | language         | en                                                                                                                                    |
+| applicationDate         | String     | Application date     | 2022-09-29                                                                                                                            |
+| applicationLanguageCode | String     | Application Language     | en                                                                                                                                    |
+| applicationNumber       | String     | Application number     | 97612203                                                                                                                              |
+| registrationNumber      | String     | Registration number       | 4590785                                                                                                                               |
+| applicationRefNumber    | List       | Application Reference Number   |                                                                                                                                           |
+| brandName               | List       | Brand name       | ["1ST AID"]                                                                                                                       |
+| collection              | String     | data set       | ustm                                                                                                                                  |
+| designatedCountries     | List       | designated country desc    | ["US"]                                                                                                                                |
+| designation             | List       | designated country     | ["US"]                                                                                                                                |
+| filingPlace             | String     | Application location     |                                                                                                                                           |
+| kind                    | List       | Trademark category     | ["Individual"]                                                                                                                    |
+| logos                   | List       | logo         |                                                                                                                                           |
+| └logo                  | String     | logo         |                                                                                                                                           |
+| └logoUrl               | String     | logo url     |                                                                                                                                           |
+| markFeature             | String     | Trademark type     | Combined                                                                                                                              |
+| niceClass               | List       | Nice Classification     | [5]                                                                                                                                   |
+| office                  | String     | intellectual property office   | US                                                                                                                                    |
+| status                  | String     | status         | Pending                                                                                                                               |
+| statusDate              | String     | status update date | 2023-05-02                                                                                                                            |
+| type                    | String     | type         | TRADEMARK                                                                                                                             |
+
+#### Request example
+```
+curl 'https://api.sellersprite.com/v1/global/brand/list' \
+  -H 'secret-key: you key' \
+  -H 'content-type: multipart/form-data' \
+  -F "imageFile=" -F "imageBase64=" -F "text=ANKER" -F "office=US" -F "office=CA" \
+ --compressed
+```
+## Global Trademark Library - Details
+
+
+* Request URI：**GET** /v1/global/brand/detail
+
+#### Request parameter
+
+| Name | Type | Description               | Example              | Required |
+| -------------- | -------------- | ---------------------------- | ----------------------- | -------------- |
+| office   | List     | Data range, see previous interface | US                | ✓       |
+| brandId  | String   | id,See List Interface          | US502022097612203 | ✓       |
+
+#### Response parameter
+
+| Name                            | Type         | Description         | Example                    |
+| ----------------------------------------- | ---------------------- | ---------------------- | ----------------------------- |
+| id                                  | String           | id               | US502022097612203       |
+| applicant                           | List             | applicant           | ANKER INC               |
+| applicantCountryCode                | Integer          | Applicant's country       | US                      |
+| applicants                          | List | Applicant Details       | The format is the same as Office, and the structure is shown in the table below |
+| applicationDate                     | String           | Application date         | 2022-09-29              |
+| applicationLanguageCode             | String           | Application language         | en                      |
+| applicationNumber                   | String           | Application number         | 97612203                |
+| registrationNumber                  | String           | Registration number           | 4590785                 |
+| applicationRefNumber                | List             | Application Reference Number       |                             |
+| brandName                           | List             | Brand name           | ["1ST AID"]         |
+| collection                          | String           | Data Set           | ustm                    |
+| designatedCountries                 | List             | Designated Country Description        | ["US"]                  |
+| designation                         | List             | Designated Country          | ["US"]                  |
+| filingPlace                         | String           | Application location         |                             |
+| kind                                | List             | Trademark category         | ["Individual"]      |
+| logos                               | List             | logo             |                             |
+| └logo                              | String           | logo             |                             |
+| └logoUrl                           | String           | logo url         |                             |
+| markFeature                         | String           | Trademark type         | Combined                |
+| niceClass                           | List             | Nice Classification         | [5]                     |
+| office                              | String           | intellectual property office       | US                      |
+| status                              | String           | status             | Pending                 |
+| statusDate                          | String           | status update date     | 2023-05-02              |
+| type                                | String           | type             | TRADEMARK               |
+| appeals                             | List             | Appeal information         |                             |
+| └date                              | String           | date              |                             |
+| └kind                              | String           | type             |                             |
+| correspondence                      | AddressDto       | contact address         |                             |
+| events                              | List             | event             |                             |
+| └date                              | String           | date             |                             |
+| └officeKind                        | String           | Classification of Property Rights Office       |                             |
+| └gbdKind                           | String           | Brand Analysis         |                             |
+| └doc                               | String           | document             |                             |
+| └country                           | String           | country             |                             |
+| expiryDate                          | String           | Expiration date         |                             |
+| extra                               | String           | Extended Information         |                             |
+| gbdStatus                           | String           | Brand status         |                             |
+| goodsServicesClassification         | Object           | Product classification information     |                             |
+| └kind                              | String           | type             |                             |
+| └version                           | String           | version             |                             |
+| └classification                    | String           | detail             |                             |
+| └└code                            | String           | code          |                             |
+| └└terms                           | Map              | describe             |                             |
+| goodsServicesUnclassified           | Map              | Unclassified product information   |                             |
+| markDescriptionDetails              | List             | Trademark Description Details     |                             |
+| └text                              | String           | describe             | ANKER INC               |
+| └languageCode                      | String           | language             | en                      |
+| markDisclaimerDetails               | List             | Trademark Disclaimer     |                             |
+| └text                              | String           | describe             | ANKER INC               |
+| └languageCode                      | String           | language             | en                      |
+| markImageDetails                    | JSONArray        | Trademark graphic classification     |                             |
+| nationalGoodsServicesClassification | Object           | International Commodity Classification Information |                             |
+| └kind                              | String           | type             |                             |
+| └version                           | String           | version             |                             |
+| └classification                    | String           | detail             |                             |
+| └└code                            | String           | code           |                             |
+| └└terms                           | Map              | describe             |                             |
+| officeStatus                        | String           | Office status         |                             |
+| priorities                          | List             | Priority items         |                             |
+| └severity                          | String           | level             |                             |
+| └code                              | String           | code           |                             |
+| └field                             | String           | field             |                             |
+| └type                              | String           | type             |                             |
+| └message                           | String           | describe             |                             |
+| publicationDate                     | String           | publication date         |                             |
+| publications                        | List             | publication detail         |                             |
+| └date                              | String           | date             |                             |
+| └identifier                        | String           | sign             |                             |
+| └section                           | String           | content             |                             |
+| qc                                  | List             | Review comments         |                             |
+| └severity                          | String           | level             |                             |
+| └code                              | String           | code          |                             |
+| └field                             | String           | field             |                             |
+| └type                              | String           | type             |                             |
+| └message                           | String           | describe             |                             |
+| reference                           | Object           | reference information         |                             |
+| └office                            | String           | Institution code         |                             |
+| └application                       | Object           | application information         |                             |
+| └└date                            | String           | date             |                             |
+| └└number                          | String           | nubmer             |                             |
+| └registration                      | Object           | Registration Information         |                             |
+| └└date                            | String           | date             |                             |
+| └└number                          | String           | nubmer             |                             |
+| refOffice                           | String           | Reference Office       |                             |
+| registrationDate                    | String           | registration date         |                             |
+| registrationOfficeCode              | String           | Registered country         |                             |
+| registrationRefNumber               | List             | Registration reference number       |                             |
+| representatives                     | List | Representative Information         |                             |
+| secondLanguageCode                  | String           | second language         |                             |
+| st13                                | String           | id               |                             |
+| terminationDate                     | String           | End Date         |                             |
+| wordMarkSpecification               | Object           | Text trademark description     |                             |
+| └markTransliteration               | String           |                      |                             |
+| └markTranslation                   | Object           | trademark translation         |                             |
+| └└text                            | String           | content             |                             |
+| └└languageCode                    | String           | Language Type         |                             |
+| └markVerbalElement                 | Object           |                      |                             |
+| └└text                            | String           | content             |                             |
+| └└languageCode                    | String           | Language Type         |                             |
+| └markSignificantVerbalElement      | Object           |                      |                             |
+| └└text                            | String           | content             | SONICARE                |
+| └└languageCode                    | String           | Language Type         | en                      |
+
+#### AddressDto structure:
+
+| kind           | String     | type     | Legal Entity                                                                                                                          |
+| -------------------- | ---------------- | -------------- | ------------------------------------------------------------------------------------------------------------------------------------------- |
+| identifier     | String     | sign     | 33744042                                                                                                                              |
+| countryCode    | String     | country code | US                                                                                                                                    |
+| contact        | JSONObject | contact type |                                                                                                                                           |
+| fullAddress    | List       | full address |                                                                                                                                           |
+| └text         | String     | describe     |                                                                                                                                           |
+| └languageCode | String     | language     | en                                                                                                                                    |
+| └imageUrl     | String     | image URL  | [https://o.sellersprite.com/w/brands/ustm/US502022097612203/ee45f.jpg](https://o.sellersprite.com/w/brands/ustm/US502022097612203/ee45f.jpg) |
+| fullName       | List       | complete name |                                                                                                                                           |
+| └text         | String     | describe     | ANKER INC                                                                                                                             |
+| └languageCode | String     | language     | en                                                                                                                                    |
+
+#### Request example
+```
+curl 'https://api.sellersprite.com/v1/global/brand/detail?brandId=US502016087116276&office=US' \
+  -H 'secret-key: you key' \
+  -H 'content-type: multipart/form-data' \
+  -F "imageFile=" -F "imageBase64=" -F "text=ANKER" -F "office=US" -F "office=CA" \
+ --compressed
+```
 
 
 ### Appendix

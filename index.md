@@ -1267,7 +1267,7 @@ curl 'https://api.sellersprite.com/v1/global/brand/range' \
 curl 'https://api.sellersprite.com/v1/ocr/identify' \
   -H 'secret-key: Your Key' \
   -H 'content-type: multipart/form-data' \
-  -F "imageFile=@/home/image/人像.jpeg" -F "imageBase64=" -F "text=ANKER" -F "office=US" -F "office=CA" \
+  -F "imageFile=@/home/image/photo.jpeg" -F "imageBase64=" -F "text=ANKER" -F "office=US" -F "office=CA" \
  --compressed
 ```
 

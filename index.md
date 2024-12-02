@@ -1464,19 +1464,19 @@ curl 'https://api.sellersprite.com/v1/global/brand/list' \
 
 #### AddressDto structure:
 
-| 参数名称       | 参数类型   | 参数说明 | 举例 |
-| -------------------- | ---------------- | -------------- | ---------------- |
-| kind           | String     | 类型     | Legal Entity                                                                                                                          |
-| identifier     | String     | 标识     | 33744042                                                                                                                              |
-| countryCode    | String     | 国家编码 | US                                                                                                                                    |
-| contact        | JSONObject | 联系方式 |                                                                                                                                           |
-| fullAddress    | List       | 完整地址 |                                                                                                                                           |
-| └text         | String     | 描述     |                                                                                                                                           |
-| └languageCode | String     | 语言     | en                                                                                                                                    |
-| └imageUrl     | String     | 图片URL  | [https://o.sellersprite.com/w/brands/ustm/US502022097612203/ee45f.jpg](https://o.sellersprite.com/w/brands/ustm/US502022097612203/ee45f.jpg) |
-| fullName       | List       | 完整名称 |                                                                                                                                           |
-| └text         | String     | 描述     | ANKER INC                                                                                                                             |
-| └languageCode | String     | 语言     | en                                                                                                                                    |
+| Name                  | Type    | Description                                                                   | Example                                                                                                                       |
+| ----------------------- | --------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------- |
+| kind           | String     | type     | Legal Entity                                                                                                                          |
+| identifier     | String     | sign     | 33744042                                                                                                                              |
+| countryCode    | String     | country code | US                                                                                                                                    |
+| contact        | JSONObject | contact type |                                                                                                                                           |
+| fullAddress    | List       | full address |                                                                                                                                           |
+| └text         | String     | describe     |                                                                                                                                           |
+| └languageCode | String     | language     | en                                                                                                                                    |
+| └imageUrl     | String     | image URL  | [https://o.sellersprite.com/w/brands/ustm/US502022097612203/ee45f.jpg](https://o.sellersprite.com/w/brands/ustm/US502022097612203/ee45f.jpg) |
+| fullName       | List       | complete name |                                                                                                                                           |
+| └text         | String     | describe     | ANKER INC                                                                                                                             |
+| └languageCode | String     | language     | en   
 
 
 #### Request example

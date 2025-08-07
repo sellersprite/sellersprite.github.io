@@ -48,6 +48,9 @@
 | month           | String  | The filter date is the last 30 days by default, and the earliest query time is January 2020 | see table 1.1                                                |          |
 | keyword         | String  |                                                                                             | N95                                                          |          |
 | excludeKeywords | String  | Keywords that need to be excluded                                                           | portable                                                     |          |
+| matchType       | Integer | 1:Broad, 2:Phrase match, 3:Exact                                                            | default:2                                                    |          |
+| includeSellers  | String  | include sellers                                                                             | amazon                                                       |          |
+| excludeSellers  | String  | exclude sellers                                                                             | amazon                                                       |          |
 | minPrice        | Float   |                                                                                             | 10                                                           |          |
 | maxPrice        | Float   |                                                                                             | 30                                                           |          |
 | minRating       | Float   |                                                                                             | 1.0                                                          |          |
